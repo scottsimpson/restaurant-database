@@ -146,7 +146,9 @@ SELECT FirstName, LastName, FavoriteDish FROM Customers JOIN Dishes ON Customers
 SELECT FirstName, LastName, FavoriteDish, Dishes.`Name` FROM Customers JOIN Dishes ON Customers.FavoriteDish = Dishes.DishID;
 ```
 
-``SELECT FirstName, LastName, FavoriteDish, Dishes.DishID, Dishes.`Name` FROM Customers JOIN Dishes ON Customers.FavoriteDish = Dishes.DishID;``
+```SQL
+SELECT FirstName, LastName, FavoriteDish, Dishes.DishID, Dishes.`Name` FROM Customers JOIN Dishes ON Customers.FavoriteDish = Dishes.DishID;
+```
 
 ```SQL
 SELECT FirstName, LastName, Dishes.`Name` FROM Customers JOIN Dishes ON Customers.FavoriteDish = Dishes.DishID;
