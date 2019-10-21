@@ -107,7 +107,7 @@ GROUP BY(Orders.OrderID);
 ```
 
 For SQLite:
-_SQLite doesn’t support the `SEPARATOR` keyword in `GROUP\_CONCAT()`._
+_SQLite doesn’t support the `SEPARATOR` keyword in `GROUP_CONCAT()`._
 ```SQL
 SELECT OrdersDishes.OrderID, Orders.OrderDate, Customers.FirstName, Customers.LastName, Customers.Phone, GROUP_CONCAT(Dishes.`Name`, ', ') AS Items, COUNT(OrdersDishes.DishID) AS Qty, SUM(Dishes.Price) AS Total
 FROM OrdersDishes
