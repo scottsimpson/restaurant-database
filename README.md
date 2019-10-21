@@ -19,7 +19,10 @@ In the course, I demonstrated interacting with the database using [HeidiSQL][4],
 
 For practice purposes, both options work in a similar way.
 
+### An example showing HeidiSQL
 ![][image-1]
+
+### An example showing DB Browser for SQLite
 ![][image-2]
 
 [1]:	https://www.linkedin.com/learning/programming-foundations-databases-2
