@@ -1,9 +1,13 @@
 This document contains the queries demonstrated in Chapter 5.
 
 ### 05-01: Creating a Database
-`CREATE DATABASE Restaurant;`
+```SQL
+CREATE DATABASE Restaurant;
+```
 
-`USE Restaurant;`
+```SQL
+USE Restaurant;
+```
 
 ### 05-02: Creating Tables
 ```SQL
@@ -30,71 +34,131 @@ CREATE TABLE Customers (
 ```
 
 ### 05-03: Writing SQL Queries
-`SELECT * FROM Customers;`
+```SQL
+SELECT * FROM Customers;
+```
 
-`SELECT * FROM Dishes;`
+```SQL
+SELECT * FROM Dishes;
+```
 
-`SELECT Name FROM Customers;`
+```SQL
+SELECT Name FROM Customers;
+```
 
-`SELECT FirstName, LastName, Email FROM Customers;`
+```SQL
+SELECT FirstName, LastName, Email FROM Customers;
+```
 
 ### 05-04: Narrowing query results
-`SELECT FirstName, LastName, State FROM Customers;`
+```SQL
+SELECT FirstName, LastName, State FROM Customers;
+```
 
-`SELECT FirstName, LastName, State FROM Customers WHERE State = "CA";`
+```SQL
+SELECT FirstName, LastName, State FROM Customers WHERE State = "CA";
+```
 
-`SELECT FirstName, LastName, State FROM Customers WHERE State = "TX";`
+```SQL
+SELECT FirstName, LastName, State FROM Customers WHERE State = "TX";
+```
 
-`SELECT FirstName, LastName, State FROM Customers WHERE State = "CA" OR State = "CO;`
+```SQL
+SELECT FirstName, LastName, State FROM Customers WHERE State = "CA" OR State = "CO;
+```
 
-`SELECT FirstName, LastName, State FROM Customers WHERE State LIKE "C%";`
+```SQL
+SELECT FirstName, LastName, State FROM Customers WHERE State LIKE "C%";
+```
 
-`SELECT FirstName, LastName, State FROM Customers WHERE Name = "Taylor";`
+```SQL
+SELECT FirstName, LastName, State FROM Customers WHERE Name = "Taylor";
+```
 
-`SELECT ID, FirstName, LastName, State FROM Customers WHERE Name = "Taylor”;`
+```SQL
+SELECT ID, FirstName, LastName, State FROM Customers WHERE Name = "Taylor”;
+```
 
-`SELECT * FROM Reservations WHERE Date > "2019-02-06" AND Date < "2019-02-07”;`
+```SQL
+SELECT * FROM Reservations WHERE Date > "2019-02-06" AND Date < "2019-02-07”;
+```
 
 ### 05-05: Sorting results
-``SELECT * FROM Dishes ORDER BY `Name`;``
+```SQL
+SELECT * FROM Dishes ORDER BY `Name`;
+```
 
-``SELECT * FROM Dishes ORDER BY `Name` ASC;``
+```SQL
+SELECT * FROM Dishes ORDER BY `Name` ASC;
+```
 
-``SELECT * FROM Dishes ORDER BY `Name` DESC;``
+```SQL
+SELECT * FROM Dishes ORDER BY `Name` DESC;
+```
 
-`SELECT * FROM Dishes ORDER BY Price;`
+```SQL
+SELECT * FROM Dishes ORDER BY Price;
+```
 
-``SELECT * FROM Reservations ORDER BY `Date`;``
+```SQL
+SELECT * FROM Reservations ORDER BY `Date`;
+```
 
-``SELECT * FROM Reservations WHERE `Date` > "2019-02-06" AND `Date` < "2019-02-07" ORDER BY `Date`;``
+```SQL
+SELECT * FROM Reservations WHERE `Date` > "2019-02-06" AND `Date` < "2019-02-07" ORDER BY `Date`;
+```
 
 ### 05-06: Aggregate functions
-`SELECT COUNT(FirstName) FROM Customers;`
+```SQL
+SELECT COUNT(FirstName) FROM Customers;
+```
 
-`SELECT COUNT(FirstName) FROM Customers WHERE State = "CA”;`
+```SQL
+SELECT COUNT(FirstName) FROM Customers WHERE State = "CA”;
+```
 
-`SELECT COUNT(State) FROM Customers WHERE State = "CA”;`
+```SQL
+SELECT COUNT(State) FROM Customers WHERE State = "CA”;
+```
 
-`SELECT SUM(Price) FROM Dishes;`
+```SQL
+SELECT SUM(Price) FROM Dishes;
+```
 
-`SELECT SUM(Price), AVG(Price) FROM Dishes;`
+```SQL
+SELECT SUM(Price), AVG(Price) FROM Dishes;
+```
 
-`SELECT SUM(Price), AVG(Price), MIN(Price), MAX(Price) FROM Dishes;`
+```SQL
+SELECT SUM(Price), AVG(Price), MIN(Price), MAX(Price) FROM Dishes;
+```
 
 ### 05-07: Joining tables
-`SELECT FirstName, LastName, FavoriteDish FROM Customers JOIN Dishes;`
+```SQL
+SELECT FirstName, LastName, FavoriteDish FROM Customers JOIN Dishes;
+```
 
-`SELECT FirstName, LastName, FavoriteDish FROM Customers JOIN Dishes ON Customers.FavoriteDish = Dishes.DishID;`
+```SQL
+SELECT FirstName, LastName, FavoriteDish FROM Customers JOIN Dishes ON Customers.FavoriteDish = Dishes.DishID;
+```
 
-``SELECT FirstName, LastName, FavoriteDish, Dishes.`Name` FROM Customers JOIN Dishes ON Customers.FavoriteDish = Dishes.DishID;``
+```SQL
+SELECT FirstName, LastName, FavoriteDish, Dishes.`Name` FROM Customers JOIN Dishes ON Customers.FavoriteDish = Dishes.DishID;
+```
 
 ``SELECT FirstName, LastName, FavoriteDish, Dishes.DishID, Dishes.`Name` FROM Customers JOIN Dishes ON Customers.FavoriteDish = Dishes.DishID;``
 
-``SELECT FirstName, LastName, Dishes.`Name` FROM Customers JOIN Dishes ON Customers.FavoriteDish = Dishes.DishID;``
+```SQL
+SELECT FirstName, LastName, Dishes.`Name` FROM Customers JOIN Dishes ON Customers.FavoriteDish = Dishes.DishID;
+```
 
-`SELECT * FROM Reservations;`
+```SQL
+SELECT * FROM Reservations;
+```
 
-`SELECT FirstName, LastName, Reservations.Date, Reservations.PartySize FROM Customers JOIN Reservations ON Reservations.CustomerID = Customers.CustomerID ORDER BY Reservations.Date;`
+```SQL
+SELECT FirstName, LastName, Reservations.Date, Reservations.PartySize FROM Customers JOIN Reservations ON Reservations.CustomerID = Customers.CustomerID ORDER BY Reservations.Date;
+```
 
 For MySQL:
 ```SQL
@@ -118,20 +182,38 @@ GROUP BY(Orders.OrderID);
 ```
 
 ### 05-08: Modifying data
-`INSERT INTO Customers;`
+```SQL
+INSERT INTO Customers;
+```
 
-`INSERT INTO Customers (FirstName, LastName, Email, Phone) VALUES ("Jane", "Smith", "jsmith2019@landonhotel.com", "415-555-1234");`
+```SQL
+INSERT INTO Customers (FirstName, LastName, Email, Phone) VALUES ("Jane", "Smith", "jsmith2019@landonhotel.com", "415-555-1234");
+```
 
-`SELECT * FROM Customers WHERE FirstName = "Taylor" AND LastName = "Jenkins";`
+```SQL
+SELECT * FROM Customers WHERE FirstName = "Taylor" AND LastName = "Jenkins";
+```
 
-`SELECT * FROM Customers WHERE CustomerID = 1;`
+```SQL
+SELECT * FROM Customers WHERE CustomerID = 1;
+```
 
-`UPDATE Customers SET Email = "tjenkins@landonhotel.com" WHERE CustomerID = 1;`
+```SQL
+UPDATE Customers SET Email = "tjenkins@landonhotel.com" WHERE CustomerID = 1;
+```
 
-`SELECT * FROM Customers WHERE CustomerID = 1;`
+```SQL
+SELECT * FROM Customers WHERE CustomerID = 1;
+```
 
-`SELECT * FROM Customers WHERE FirstName = "Taylor" AND LastName = "Jenkins";`
+```SQL
+SELECT * FROM Customers WHERE FirstName = "Taylor" AND LastName = "Jenkins";
+```
 
-`DELETE FROM Customers WHERE CustomerID = 26;`
+```SQL
+DELETE FROM Customers WHERE CustomerID = 26;
+```
 
-`SELECT * FROM Customers;`
+```SQL
+SELECT * FROM Customers;
+```
