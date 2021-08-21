@@ -64,7 +64,7 @@ SELECT FirstName, LastName, State FROM Customers WHERE State = "TX";
 ```
 
 ```SQL
-SELECT FirstName, LastName, State FROM Customers WHERE State = "CA" OR State = "CO;
+SELECT FirstName, LastName, State FROM Customers WHERE State = "CA" OR State = "CO";
 ```
 
 ```SQL
@@ -76,11 +76,11 @@ SELECT FirstName, LastName, State FROM Customers WHERE Name = "Taylor";
 ```
 
 ```SQL
-SELECT ID, FirstName, LastName, State FROM Customers WHERE Name = "Taylor”;
+SELECT ID, FirstName, LastName, State FROM Customers WHERE Name = "Taylor";
 ```
 
 ```SQL
-SELECT * FROM Reservations WHERE Date > "2019-02-06" AND Date < "2019-02-07”;
+SELECT * FROM Reservations WHERE Date > "2019-02-06" AND Date < "2019-02-07";
 ```
 
 ### 05-05: Sorting results
@@ -114,11 +114,11 @@ SELECT COUNT(FirstName) FROM Customers;
 ```
 
 ```SQL
-SELECT COUNT(FirstName) FROM Customers WHERE State = "CA”;
+SELECT COUNT(FirstName) FROM Customers WHERE State = "CA";
 ```
 
 ```SQL
-SELECT COUNT(State) FROM Customers WHERE State = "CA”;
+SELECT COUNT(State) FROM Customers WHERE State = "CA";
 ```
 
 ```SQL
@@ -169,7 +169,7 @@ FROM OrdersDishes
 JOIN Dishes on OrdersDishes.DishID = Dishes.DishID
 JOIN Orders on Orders.OrderID = OrdersDishes.OrderID
 JOIN Customers on Orders.CustomerID = Customers.CustomerID
-GROUP BY(Orders.OrderID);
+GROUP BY Orders.OrderID;
 ```
 
 For SQLite:
@@ -180,7 +180,7 @@ FROM OrdersDishes
 JOIN Dishes on OrdersDishes.DishID = Dishes.DishID
 JOIN Orders on Orders.OrderID = OrdersDishes.OrderID
 JOIN Customers on Orders.CustomerID = Customers.CustomerID
-GROUP BY(Orders.OrderID);
+GROUP BY Orders.OrderID;
 ```
 
 ### 05-08: Modifying data
