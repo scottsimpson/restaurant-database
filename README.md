@@ -3,7 +3,7 @@ While the [_Programming Foundations: Databases_][1] course on LinkedIn Learning 
 
 This repository includes files you can use to practice. The files are:
 * tables of data used to populate the Restaurant database (contents of the `csvs` folder)
-* two versions of the Restaurant database for various software tools (`restaurant.sql` and `restaurant_sqlite.db`)
+* three versions of the Restaurant database for various software tools (`restaurant.sql`, `restaurant_postgres.sql`, and `restaurant_sqlite.db`)
 * a listing of the commands that I used to work with the database (`queries.md`)
 
 **You do not need to use these files to follow along with the course.**
@@ -13,11 +13,12 @@ Chapter 5 in the [_Programming Foundations: Databases_][2] course is intended as
 For an introduction to the SQL language, see the course [_Learning SQL Programming_][3] on LinkedIn Learning.
 
 ## Software Used
-In the course, I demonstrated interacting with the database using [HeidiSQL][4], connected to a [MariaDB][5] server. Because this can take some effort to set up, you may consider using [DB Browser for SQLite][6] on a local system instead. I’ve provided the database here in two formats:
+In the course, I demonstrated interacting with the database using [HeidiSQL][4], connected to a [MariaDB][5] server. Because this can take some effort to set up, you may consider using [DB Browser for SQLite][6] on a local system instead. I’ve provided the database here in three formats:
 * `restaurant.sql` can be imported into tools like *MySQL*, *SQL Server*, and other compatible database management systems.
+* `restaurant_postgres.sql` can be imported into *PostgreSQL* database management systems.
 * `restaurant_sqlite.db` can be opened in *DB Browser for SQLite*.
 
-For practice purposes, both options work in a similar way.
+For practice purposes, all options work in a similar way.
 
 ### An example showing HeidiSQL
 ![][image-1]
